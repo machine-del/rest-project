@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --darkBrown: #1E1B19;
+    --colorGrey: #767676;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+}
+
+.header__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1040px;
+    margin: 12px 0px 19px 0px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+}
+
+.header__navigation>nav>ul {
+    display: flex;
+    gap: 20px;
+}
+
+.header__navigation>nav>ul>li {
+    display: inline-flex;
+}
+
+.header__navigation>nav>ul>li:not(:last-child)>a, .header__navigation>nav>ul>li:last-child>a {
+    text-decoration: none;
+    color: var(--darkBrown);
+}
+
+.header__navigation>nav>ul>li:last-child>a {
+    color: var(--colorGrey);
+}
+
+.header__navigation>nav>ul>li:last-child {
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--darkBrown);
+}
+
+.active-lang {
+    color: var(--darkBrown) !important;
+}
+
+.about {
+    width: 100%;
+    height: 541px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../images/background/15f9ebfd17d8ea5e21c615edbe713915\ 1.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+}
+
+.about__title {
+    font-family: Lora;
+    font-weight: 400;
+    font-size: 50px;
+    color: #fff;
+    line-height: 110.00000000000001%;
+    text-align: center;
+}
+
+.about__description {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: #fff;
+    margin: 30px 0px 60px 0px;
+}
+
+.about__actions {
+    display: flex;
+    gap: 20px;
+}
+
+.about__actions>a {
+    padding: 10px 20px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    transition: all ease-in-out .5s;
+    text-decoration: none;
+}
+
+.about__button_primary {
+    color: var(--darkBrown);
+    background-color: #FFFEFE;
+    border: 1px solid #FFFEFE;
+}
+
+.about__button_primary:hover {
+    background-color: transparent;
+    border: 1px solid #FFFEFE;
+    color: #fffefe;
+}
+
+.about__button_outline {
+    border: 1px solid #FFFEFE;
+    color: #fffefe;
+}
+
+.about__button_outline:hover {
+    color: var(--darkBrown);
+    background-color: #FFFEFE;
+}
+
+.restaurant-about {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.restaurant-about__box {
+    width: 100%;
+    max-width: 1040px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.restaurant-about__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 263px;
+}
+
+.restaurant-about__title {
+    font-family: Lora;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 110.00000000000001%;
+    color: var(--darkBrown);
+    margin-bottom: 30px;
+}
+
+.restaurant-about__description {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--darkBrown);
+}
+
+.restaurant-about__features {
+    display: flex;
+    gap: 66px;
+}
+
+.restaurant-about__feature {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.restaurant-about__feature-title {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--darkBrown);
+}
+
+.restaurant-about__feature-value {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    color: var(--colorGrey);
+}
+
+.restaurant-about__slider {
+    position: relative;
+    width: 404px;
+    height: 501px;
+}
+
+.restaurant-about__slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.restaurant-about__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.restaurant-about__slide:first-child {
+    opacity: 1;
+}
+
+.restaurant-about__pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.restaurant-about__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restaurant-about__dot:first-child {
+    background-color: white;
+}
+
+.menu-section {
+    width: 100%;
+    position: relative;
+}
+
+.menu__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__button {
+    padding: 10px 20px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    transition: all ease-in-out .5s;
+    text-decoration: none;
+}
+
+.menu__content {
+    display: flex;
+    background-color: #1E1B19;
+    color: #fff;
+    height: 579px;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.menu__gallery {
+    position: relative;
+    width: 100%;
+    margin-left: 80px;
+    top: -65px;
+    max-width: 593px;
+}
+
+.menu__image-wrapper {
+    position: relative;
+    width: fit-content;
+}
+
+.menu__image-main {
+    display: block;
+    max-width: 100%;
+}
+
+.menu__image-overlay {
+    position: absolute;
+    bottom: -32%;
+    right: -15%;
+}
+
+.menu__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 43px;
+}
+
+.menu__heading {
+    margin-top: 80px;
+    font-family: Lora;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 110.00000000000001%;
+
+}
+
+.menu__text {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    margin: 30px 0px 60px 0px;
+}
+
+.dishes-cards {
+    position: relative;
+    margin-left: 80px;
+    margin-top: -170px; 
+    z-index: 2;
+}
+
+.dishes-cards__slider {
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+}
+
+.dishes-cards__slider::-webkit-scrollbar {
+    display: none;
+}
+
+.dishes-card {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+}
+
+.dishes-card__title {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--darkBrown);
+    margin-top: 10px;
+}
+
+.dishes-cards__controls {
+    display: flex;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.dishes-cards__button {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.dishes-cards__button_dark {
+    background-color: var(--darkBrown);
+    color: #fff;
+    transition: all .5s ease-in-out;
+    border: 1px solid var(--darkBrown);
+}
+
+.dishes-cards__button_outline {
+    border: 1px solid var(--darkBrown);
+    color: var(--darkBrown);
+    transition: all .5s ease-in-out;
+}
+
+.dishes-cards__button_outline:hover {
+    color: #fff;
+    background-color: var(--darkBrown);
+}
+
+.dishes-cards__button_dark:hover {
+    color: var(--darkBrown);
+    background-color: transparent;
+}
+
+.reservation {
+}
+
+.reservation__container {
+}
+
+.reservation__form {
+}
+
+.reservation__form-title {
+}
+
+.booking-form {
+}
+
+.booking-form__group {
+}
+
+.booking-form__label {
+}
+
+.booking-form__input {
+}
+
+.booking-form__submit {
+}
+
+.reservation__about {
+}
+
+.reservation__title {
+}
+
+.reservation__text {
+}
+
+.reservation__image-wrapper {
+}
+
+.reservation__image {
+}
