@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="footer__contacts">
+            <div class="footer__contacts" id="footer__contacts">
                 <div class="footer__contact-item">+7 (951) 643-43-88</div>
                 <div class="footer__contact-item">Дегтярный переулок, дом 7, <br> Санкт-Петербург</div>
                 <div class="footer__contact-item">Время работы <br> Ежедневно с 07:30 до 23:00</div>

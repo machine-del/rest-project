@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
 </head>
 
 <body>
@@ -27,7 +29,7 @@
                 </div>
             </div>
         </section>
-        <section class="restaurant-about">
+        <section class="restaurant-about" id="restaurant-about">
             <div class="restaurant-about__box">
                 <div class="restaurant-about__container">
                     <div class="restaurant-about__main">
@@ -180,7 +182,7 @@
                 </div>
             </div>
         </section>
-        <section class="delivery">
+        <section class="delivery" id="delivery">
             <div class="delivery__container">
                 <div class="delivery__content">
                     <div class="delivery__main">
@@ -267,7 +269,7 @@
                 </div>
             </div>
         </section>
-        <section class="events">
+        <section class="events" id="events">
             <div class="events__container">
                 <div class="events__media">
                     <h2 class="events__heading">Событие</h2>
@@ -308,6 +310,19 @@
     </main>
 
     <?php include './footer.php'; ?>
+    <script src="./js/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script src="./js/slick.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(".dishes-cards__slider").slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            prevArrow: false,
+            nextArrow: false
+        });
+    </script>
 </body>
 
 </html>
