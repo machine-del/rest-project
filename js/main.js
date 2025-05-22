@@ -1,123 +1,123 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.restaurant-about__slide');
-    const dots = document.querySelectorAll('.restaurant-about__dot');
-    let currentSlide = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".restaurant-about__slide");
+  const dots = document.querySelectorAll(".restaurant-about__dot");
+  const burger = document.getElementById('burger');
+  const btnBurger = document.getElementById('lines');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  btnBurger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  let currentSlide = 0;
+  let slideInterval;
+
+  function showSlide(index) {
+    slides.forEach((slide) => (slide.style.opacity = 0));
+    dots.forEach(
+      (dot) => (dot.style.backgroundColor = "rgba(255, 255, 255, 0.5)")
+    );
+
+    slides[index].style.opacity = 1;
+    dots[index].style.backgroundColor = "white";
+    currentSlide = index;
+  }
+
+  function startSlideInterval() {
+    slideInterval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      clearInterval(slideInterval);
+      showSlide(index);
+      startSlideInterval();
+    });
+  });
+
+ const scrollElements = document.querySelectorAll('.scroll');
+  const parallaxRange = 30;
+  let currentOffset = 0;
+  let targetOffset = 0;
+  let isAnimating = false;
+  let lastScrollTime = 0;
+  let isTouching = false;
+
+  function applyTransform() {
+    scrollElements.forEach(element => {
+      element.style.transform = `translateY(${currentOffset}px)`;
+    });
+  }
+
+  function animate() {
+    if (!isAnimating) return;
+
+    currentOffset += (targetOffset - currentOffset) * 0.1;
     
-    let slideInterval;
-
-    function showSlide(index) {
-        slides.forEach(slide => slide.style.opacity = 0);
-        dots.forEach(dot => dot.style.backgroundColor = 'rgba(255, 255, 255, 0.5)');
-        
-        slides[index].style.opacity = 1;
-        dots[index].style.backgroundColor = 'white';
-        currentSlide = index;
+    if (Math.abs(targetOffset - currentOffset) < 0.1) {
+      currentOffset = targetOffset;
+      isAnimating = false;
     }
 
-    function startSlideInterval() {
-        slideInterval = setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }, 5000);
+    applyTransform();
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('wheel', (e) => {
+    if (isTouching) return;
+    const now = Date.now();
+    if (now - lastScrollTime < 16) return;
+    lastScrollTime = now;
+
+    const scrollDelta = e.deltaY * 0.3;
+    targetOffset = Math.max(-parallaxRange, Math.min(parallaxRange, targetOffset - scrollDelta));
+    
+    if (!isAnimating) {
+      isAnimating = true;
+      requestAnimationFrame(animate);
     }
+  }, { passive: true });
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            clearInterval(slideInterval);
-            showSlide(index);
-            startSlideInterval();
-        });
-    });
+  let touchStartY = 0;
+  let touchId = null;
 
-    startSlideInterval();
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 1) return;
+    isTouching = true;
+    touchId = e.touches[0].identifier;
+    touchStartY = e.touches[0].clientY;
+    targetOffset = currentOffset;
+  }, { passive: true });
 
-    const cardsSlider = document.querySelector('.dishes-cards__slider');
-    const cards = document.querySelectorAll('.dishes-card');
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID;
-    let currentIndex = 0;
+  window.addEventListener('touchmove', (e) => {
+    if (!isTouching || e.touches.length > 1) return;
+    const touch = Array.from(e.touches).find(t => t.identifier === touchId);
+    if (!touch) return;
 
-    cards.forEach(card => {
-        const cardImage = card.querySelector('img');
-        if (cardImage) {
-            cardImage.addEventListener('dragstart', (e) => e.preventDefault());
-        }
-    });
-
-    cardsSlider.addEventListener('touchstart', touchStart, { passive: false });
-    cardsSlider.addEventListener('touchend', touchEnd, { passive: true });
-    cardsSlider.addEventListener('touchmove', touchMove, { passive: false });
-
-    cardsSlider.addEventListener('mousedown', touchStart);
-    cardsSlider.addEventListener('mouseup', touchEnd);
-    cardsSlider.addEventListener('mouseleave', touchEnd);
-    cardsSlider.addEventListener('mousemove', touchMove);
-
-    function touchStart(e) {
-        clearInterval(slideInterval);
-        
-        if (e.type === 'touchstart') {
-            startPos = e.touches[0].clientX;
-        } else {
-            startPos = e.clientX;
-            e.preventDefault();
-        }
-        isDragging = true;
-        animationID = requestAnimationFrame(animation);
-        cardsSlider.style.cursor = 'grabbing';
+    const deltaY = touchStartY - touch.clientY;
+    const newOffset = targetOffset + deltaY * 0.5;
+    
+    targetOffset = Math.max(-parallaxRange, Math.min(parallaxRange, newOffset));
+    
+    if (!isAnimating) {
+      isAnimating = true;
+      requestAnimationFrame(animate);
     }
+  }, { passive: true });
 
-    function touchEnd() {
-        if (!isDragging) return;
-        
-        isDragging = false;
-        cancelAnimationFrame(animationID);
-        
-        const movedBy = currentTranslate - prevTranslate;
-        
-        if (movedBy < -100 && currentIndex < cards.length - 1) {
-            currentIndex += 1;
-        }
-        
-        if (movedBy > 100 && currentIndex > 0) {
-            currentIndex -= 1;
-        }
-        
-        setPositionByIndex();
-        cardsSlider.style.cursor = 'grab';
-        
-        startSlideInterval();
-    }
+  window.addEventListener('touchend', () => {
+    isTouching = false;
+    touchId = null;
+    targetOffset = currentOffset;
+  });
 
-    function touchMove(e) {
-        if (!isDragging) return;
-        
-        const currentPosition = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-        currentTranslate = prevTranslate + currentPosition - startPos;
-        
-        if (e.type === 'touchmove') {
-            e.preventDefault();
-        }
-    }
-
-    function animation() {
-        setSliderPosition();
-        if (isDragging) requestAnimationFrame(animation);
-    }
-
-    function setSliderPosition() {
-        cardsSlider.style.transform = `translateX(${currentTranslate}px)`;
-    }
-
-    function setPositionByIndex() {
-        const cardWidth = cards[0].offsetWidth + 20;
-        currentTranslate = currentIndex * -cardWidth;
-        prevTranslate = currentTranslate;
-        setSliderPosition();
-    }
-
-    setPositionByIndex();
+  scrollElements.forEach(element => {
+    element.style.willChange = 'transform';
+    element.style.touchAction = 'none'; 
+    element.style.transition = 'transform 0.1s linear';
+  });
 });

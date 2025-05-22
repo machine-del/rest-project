@@ -1,0 +1,785 @@
+@media (max-width: 1024px) {
+    .events__image {
+        width: 350px;
+        height: 293px;
+    }
+
+    .order__image>img {
+        width: 350px;
+        height: 635px;
+    }
+
+    .events__container, .food-menu__container, .restaurant-about__box, .footer__bottom, .events__content, .reservation__form {
+        padding: 0 20px !important;
+    }
+
+    .footer__contacts {
+        display: flex;
+        gap: 40px;
+    }
+
+    .footer__contact-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer__title>h2 {
+        font-size: 36px;
+    }
+
+    .restaurant-about__features {
+        margin-top: 60px;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .menu__image-wrapper {
+        left: -100px;
+    }
+
+    .menu__gallery {
+        max-width: 417px;
+    }
+
+    .menu__info {
+        margin-left: 0;
+    }
+
+    .banquet-section__image-wrapper {
+        max-width: 469px;
+    }
+
+    .banquet-section__main-image {
+        width: 410px;
+        height: 247px;
+    }
+}
+
+@media (max-width: 980px) {
+    .reservation__form {
+        margin: 0;
+    }
+
+    .reservation__container {
+        flex-direction: column;
+    }
+
+    .reservation__text {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .reservation__about {
+        flex-direction: row;
+        padding: 0 20px;
+    }
+
+    .banquet-section__content {
+        justify-content: unset;
+    }
+}
+
+@media (max-width: 880px) {
+    .banquet-section__main-image {
+        width: 289px;
+        height: 170px;
+    }
+
+    .banquet-section__secondary-image {
+        right: -11px;
+        top: 113px;
+        width: 165px;
+        height: 165px;
+    }
+
+    .banquet-section__image-wrapper {
+        max-width: 310px;
+    }
+
+    .reservation__image {
+        width: 350px;
+        height: 236px;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-menu.active {
+        display: none;
+    }
+
+    #adapt2 {
+        display: none;
+    }
+
+    #adapt-phone {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .header__navigation {
+        display: none;
+    }
+
+    .mobile-menu>nav {
+        width: 100%;
+    }
+
+    .mobile-menu>nav>ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+
+    .about__title {
+        font-size: 36px;
+    }
+
+    .about__description {
+        font-size: 14px;
+    }
+
+    .restaurant-about__title {
+        font-size: 36px;
+    }
+
+    .menu__heading {
+        font-size: 36px;
+    }
+
+    .mobile-menu>nav {
+        display: flex;
+        padding: 0 20px;
+    }
+
+    .menu__image-main {
+        width: 390px;
+        height: 227px;
+        max-width: none;
+        position: relative;
+        left: -80px;
+        top: 25px;
+    }
+
+    .menu__gallery, .venue-section__gallery {
+        max-width: 300px;
+    }
+
+    .menu__image-overlay {
+        position: absolute;
+        bottom: -73%;
+        right: 2%;
+    }
+
+    .menu__info {
+        margin-left: 0;
+    }
+
+    .dishes-cards {
+        margin: -90px 0px 0px 20px;
+    }
+
+    .reservation__form-title {
+        font-size: 36px;
+    }
+
+    .reservation__form {
+        padding: 0 20px;
+    }
+
+    .delivery-about__features {
+        flex-direction: column;
+        margin-right: 60px;
+    }
+
+    .delivery__gallery {
+        order: -1;
+    }
+
+    .delivery__title {
+        font-size: 36px;
+    }
+
+    .delivery__content {
+        height: 732px;
+        align-items: end;
+    }
+
+    .delivery__controls {
+        flex-direction: column;
+        margin: 0px 0px 60px 0px;
+    }
+
+    .about__button {
+        width: max-content;
+    }
+
+    .delivery__info {
+        margin: 50px 0px 0px 0px;
+    }
+
+    .delivery__gallery {
+        flex: 1 18%;
+    }
+
+    .delivery__image-secondary {
+        right: -51px;
+    }
+
+    .order__form {
+        order: -1;
+    }
+
+    #adapt2 {
+        display: none;
+    }
+
+    #adapt1 {
+        display: flex;
+    }
+
+    .order__form-title {
+        font-size: 36px;
+    }
+
+    .order__container {
+        padding: 0 20px;
+        margin: 100px 0px 0px 0px;
+        gap: 20px;
+    }
+
+    .order__form {
+        margin-left: 0px;
+    }
+
+    .events__heading {
+        font-size: 36px;
+    }
+
+    .events__highlight-title {
+        font-size: 20px;
+    }
+
+    .events__highlight-title {
+        font-size: 20px;
+    }
+
+    .events__image {
+        width: 350px;
+        height: 293px;
+    }
+
+    .footer_phone {
+        display: none;
+    }
+
+    #adapt-phone {
+        display: flex;
+    }
+
+    .header__container {
+        padding: 0px 20px;
+    }
+
+    .food-menu__title {
+        font-size: 20px;
+    }
+
+    .banquet-section__title {
+        font-size: 36px;
+    }
+
+    .venue-section__specs {
+        flex-direction: column;
+    }
+
+    .venue-section__title, .dishes-cards__title {
+        font-size: 36px;
+    }
+
+
+    .dishes-cards__slider {
+        margin-right: -30%;
+    }
+
+    .dishes-card {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 720px) {
+    .reservation__about {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .reservation__container {
+        width: min-content;
+    }
+
+    .events__content {
+        width: 100%;
+    }
+
+    .reservation__image-wrapper {
+        order: -1;
+    }
+
+    .reservation__text {
+        margin-top: 20px;
+    }
+
+    .banquet-section__secondary-image {
+        display: none;
+    }
+
+    .banquet-section__image-wrapper {
+        max-width: 289px;
+    }
+
+    .venue-section__container {
+        flex-direction: column;
+    }
+
+    .venue-section__wrapper {
+        height: 100%;
+    }
+
+    .venue-section__info {
+        gap: 30px;
+    }
+
+    .restaurant-about__slider, .venue-section__info {
+        margin-bottom: 30px;
+    }
+
+    .about__description {
+        max-width: 720px;
+    }
+
+    .restaurant-about__description, .footer__description, .events__description {
+        max-width: 349px;
+    }
+}
+
+@media (max-width: 660px) {
+    .delivery__image-main {
+        display: none;
+    }
+
+    .delivery__info {
+        order: -2;
+    }
+
+    .delivery-about__features {
+        order: -2;
+    }
+
+    .delivery__main {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    #adapt2 {
+        display: flex;
+    }
+
+    .order__container {
+        padding: 0 !important;
+        margin: 150px 80px 0px;
+
+    }
+
+    #adapt1 {
+        display: none;
+    }
+
+    .delivery__image-secondary {
+        position: unset;
+    }
+
+    .delivery__content {
+        height: 914px;
+    }
+
+    .delivery__image-secondary {
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .delivery__title {
+        font-size: 20px;
+    }
+
+    .delivery__description {
+        font-size: 12px;
+    }
+
+    .about__button {
+        font-size: 12px;
+    }
+
+    .delivery-about__feature-title {
+        font-size: 12px;
+    }
+
+    .delivery-about__feature-value {
+        font-size: 11px;
+    }
+
+    .order__image, .order__form-description {
+        display: none;
+    }
+
+    .booking-form__row {
+        flex-direction: column;
+    }
+
+    .order__form {
+        display: flex;
+        flex-direction: column;
+        margin: 80px 0;
+        max-width: 509px;
+        width: 100%;
+        padding: 0 20px;
+        min-width: 320px;
+    }
+
+    .order__form-title {
+        font-size: 20px;
+    }
+
+    .events__container {
+        flex-direction: column;
+        width: min-content;
+        padding: 0 !important;
+    }
+
+    .events__content {
+        margin-top: 34px;
+        padding: 0 !important;
+    }
+
+    .mobile-menu>nav>ul {
+        width: max-content;
+        flex-direction: column;
+    }
+
+    .food-menu__columns {
+        flex-direction: column;
+    }
+
+    .banquet-section__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banquet-section__image-wrapper {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .banquet-section__main-image {
+        width: 280px;
+        height: 310px;
+        object-fit: cover;
+    }
+
+    .banquet-section__title {
+        font-size: 20px;
+    }
+
+    .banquet-section__description {
+        font-size: 12px;
+    }
+
+    .dishes-cards__controls {
+        gap: 10px;
+        margin-top: 30px;
+        flex-direction: column;
+        width: max-content;
+    }
+
+    .about__title {
+        font-size: 20px;
+    }
+
+    .about__description, .restaurant-about__description, .footer__description {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .restaurant-about__features {
+        margin-top: 30px;
+    }
+
+    .restaurant-about__container {
+        height: 100%;
+        justify-content: unset;
+    }
+
+    .restaurant-about__slide, .restaurant-about__slider-container, .restaurant-about__slider {
+        width: 280px;
+        height: 367px;
+    }
+
+    .restaurant-about__box {
+        gap: 30px;
+    }
+
+    .restaurant-about__box {
+        flex-direction: column;
+    }
+
+    .about__description {
+        font-size: 12px;
+    }
+
+    .about__actions {
+        flex-direction: column;
+    }
+
+    .about__actions>a {
+        font-size: 12px;
+    }
+
+    .menu__image-main {
+        display: none;
+    }
+
+    .menu__image-overlay {
+        bottom: unset;
+        right: -31em;
+    }
+
+    .menu__content, .delivery__content {
+        flex-direction: column;
+    }
+
+    .menu__info {
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .about__actions>a, .delivery__controls>a {
+        width: 170px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu__heading {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .menu__text {
+        font-size: 12px;
+    }
+
+    .menu__gallery, .venue-section__gallery {
+        height: 188px;
+    }
+
+    .dishes-card__title {
+        font-size: 12px;
+    }
+
+    .dishes-cards__controls {
+        flex-direction: column;
+        width: max-content;
+    }
+
+    .dishes-cards__button {
+        font-size: 12px;
+    }
+
+    .about__container {
+        padding: 0 20px;
+    }
+
+    .reservation__text {
+        font-size: 12px;
+    }
+
+    .reservation__image {
+        width: 280px;
+        height: 189px;
+    }
+
+    .booking-form__row {
+        flex-direction: column;
+    }
+
+    .reservation__form-title {
+        font-size: 20px;
+    }
+
+    .booking-form__label {
+        font-size: 12px;
+    }
+
+    .booking-form__submit {
+        font-size: 12px;
+    }
+
+    .events__heading {
+        font-size: 20px;
+    }
+
+    .events__highlight-title {
+        font-size: 16px;
+    }
+
+    .events__description, .footer__description>p {
+        font-size: 11px;
+    }
+
+    .events__button, .footer__contact-item {
+        font-size: 12px;
+    }
+
+    .events__content {
+        padding: 0;
+    }
+
+    .footer__box {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer__title>h2 {
+        font-size: 20px;
+    }
+
+    .footer__description {
+        font-size: 11px;
+    }
+
+    .footer__contacts {
+        flex-direction: column;
+    }
+
+    .footer__contact-column.second {
+        order: -1;
+    }
+
+    .footer__copyright.second {
+        display: flex;
+    }
+
+    .footer__copyright {
+        display: none;
+    }
+
+    #adapt-phone {
+        display: none;
+    }
+
+    .footer_phone.adapt {
+        display: flex;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+    }
+
+    .footer__branding, .footer__nav>ul {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px 0;
+        list-style: none;
+    }
+
+    .footer__copyright.second {
+        padding: 30px 0px;
+    }
+
+    .venue-section__title, .dishes-cards__title {
+        font-size: 20px;
+    }
+
+    .venue-section__description, .venue-section__spec-title {
+        font-size: 12px;
+    }
+
+    .venue-section__spec-value {
+        font-size: 11px;
+    }
+
+    [class^="image__menu-"]>img, .image__menu-3000, .image__menu-3800, .image__menu-4200, .image__menu-4500 {
+        width: 280px;
+        height: 395px;
+    }
+
+    .footer__info-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer__contacts {
+        margin: 40px 0px 39px 0px;
+        gap: 20px;
+    }
+
+    .footer__container {
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .dishes-card__title {
+        font-size: 10px;
+    }
+
+    .about__description {
+        font-size: 12px;
+    }
+
+    .about__actions>a {
+        font-size: 12px;
+    }
+
+
+    .menu__image-overlay {
+        bottom: unset;
+        right: -24em;
+    }
+
+    .events__media {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .events__image>img, .events__image {
+        width: 280px;
+        height: 241px;
+    }
+
+    .footer__branding {
+        gap: 30px;
+    }
+}
